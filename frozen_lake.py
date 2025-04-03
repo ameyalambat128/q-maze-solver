@@ -1,4 +1,9 @@
 import gym
+import numpy as np
+
+# Add compatibility for newer NumPy versions
+if not hasattr(np, 'bool8'):
+    np.bool8 = np.bool_
 
 env = gym.make("FrozenLake-v1", is_slippery=False, render_mode="human")
 
